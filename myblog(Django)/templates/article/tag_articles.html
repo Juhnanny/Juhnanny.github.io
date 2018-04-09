@@ -1,0 +1,64 @@
+{% extends 'article/base.html' %}
+
+{% load staticfiles %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/tag_articles.css' %}">
+{% endblock %}
+
+{% block archives %}
+    <ul class="archives-left">
+        {% for list in list2 %}
+            <li>{{ list }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block tags %}
+    {% for tag in tags%}
+        <span class="left-tags label label-primary">{{ tag.name }}</span>
+    {% endfor %}
+{% endblock %}
+
+{% block wrapper-right %}
+    {% for tag_article in tag_articles %}
+        <div class="article">
+            <h2><a href="/showDetails/{{ tag_article.id }}">{{ tag_article.title }}</a></h2>
+            <p class="article_content">{{ tag_article.content|safe }}</p>
+        </div>
+        <hr>
+    {% endfor %}
+
+
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            {% if page.has_previous %}
+                <li>
+                    <a href="/tags/{{ TagName }}/{{ page.previous_page_number }}" aria-label="Previous">
+                        <span aria-hidden="true" class="glyphicon glyphicon-backward"></span>
+                    </a>
+                </li>
+            {% endif %}
+
+
+            {% for pindex in page.paginator.page_range %}
+                {% if page.number == pindex %}
+                    <li class="active"><a>{{ pindex }}</a></li>
+                {% else %}
+                    <li><a href="/tags/{{ TagName }}/{{ pindex }}">{{ pindex }}</a></li>
+                {% endif %}
+            {% endfor %}
+
+
+            {% if page.has_next %}
+            <li>
+                <a href="/tags/{{ TagName }}/{{ page.next_page_number }}" aria-label="Next">
+                    <span aria-hidden="true" class="glyphicon glyphicon-forward"></span>
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+
+
+{% endblock %}

@@ -1,0 +1,55 @@
+.result_count{
+    width: 740px;
+    margin: 20px 0;
+    font-family: STFangsong;
+    text-align: center;
+    font-size: 20px;
+}
+
+.search_lists{
+    list-style-type: circle;
+    width: 740px;
+}
+
+.search_lists li{
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+.search_lists .search_lists_title a{
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 18px;
+    font-family: "Times New Roman",  STFangsong;
+}
+
+.search_lists .search_lists_content{
+    font-family: STFangsong, "Times New Roman";
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.archives-left{
+    width: 200px;
+    list-style-type: none;
+    padding: 0 0 0 6px;
+}
+
+.archives-left li{
+    list-style-type: none;
+    float: left;
+    width: 87px;
+    font-size: 14px;
+    font-family: "Times New Roman", STFangsong;
+    font-weight: normal;
+    margin: 1px 10px 3px 0;
+}
+
+
+.label{
+    display: inline-block;
+    margin: 3px 2px;
+}

@@ -1,0 +1,31 @@
+{% extends 'article/base.html' %}
+
+{% load staticfiles %}
+
+{% load article_filters %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/tags.css' %}">
+{% endblock %}
+
+{% block archives %}
+    <ul class="archives-left">
+        {% for list_date in listMonth %}
+            <li>{{ list_date}}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block tags %}
+    {% for tag in tags%}
+        <span class="left-tags label label-primary">{{ tag.name }}</span>
+    {% endfor %}
+{% endblock %}
+
+{% block wrapper-right %}
+    <ul class="right-tags">
+        {% for tag in tags%}
+            <a class="tag label label-primary" href="/tags/{{ tag.name }}">{{ tag.name }}<span class="badge">{{ count_list|counter:forloop.counter0 }}</span></a>
+        {% endfor %}
+    </ul>
+{% endblock %}

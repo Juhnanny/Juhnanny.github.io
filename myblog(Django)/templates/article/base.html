@@ -1,0 +1,76 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>朱楠的博客</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap/fonts/'%}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    {% block js %}{% endblock %}
+    <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.js'%}"></script>
+    {% block head %}{% endblock %}
+</head>
+<body>
+
+<div class="container">
+    <div class="wrapper">
+        <div class="wrapper-left">
+            <div class="intro">
+                <p class="chinese">朱楠的博客</p>
+                <p class="english">Blog of Zhu Nan</p>
+            </div>
+            <div class="nav">
+                <ul class="nav-list">
+                    <li><a href="/"><span class="glyphicon glyphicon-home"></span><span class="icon-content">&nbsp;&nbsp;&nbsp;&nbsp;Home</span></a></li>
+                    <li><a href="/categories/1"><span class="glyphicon glyphicon-th-list"></span><span class="icon-content">&nbsp;&nbsp;&nbsp;&nbsp;Categories</span></a></li>
+                    <li><a href="/archives"><span class="glyphicon glyphicon-folder-open"></span><span class="icon-content">&nbsp;&nbsp;&nbsp;&nbsp;Archives</span></a></li>
+                    <li><a href="/tags"><span class="glyphicon glyphicon-tags"></span><span class="icon-content">&nbsp;&nbsp;&nbsp;&nbsp;Tags</span></a></li>
+                    <li><a href="/admin"><span class="glyphicon glyphicon-user"></span><span class="icon-content">&nbsp;&nbsp;&nbsp;&nbsp;Manage</span></a></li>
+                </ul>
+            </div>
+            <div class="input-group search">
+                <form method="post" action="/search/">
+                    {% csrf_token %}
+                    <input type="text" class="form-control search-content" placeholder="请输入关键词" name="keywords">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                    </span>
+                </form>
+            </div>
+            <div class="archives">
+                <h4>ARCHIVES</h4>
+                {% block archives %}
+                {% endblock %}
+            </div>
+            <div class="tags">
+                <h4>TAGS CLOUD</h4>
+                {% block tags %}
+                {% endblock %}
+            </div>
+            <div class="media">
+                <ul class="media-list">
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="wrapper-right">
+            {% block wrapper-right %}
+            {% endblock %}
+        </div>
+    </div>
+
+
+    <div class="footer">
+        © 2018 - 2020&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="author">朱楠</span><br>
+        Powered by : <a href="https://www.djangoproject.com/" target="_blank">Django</a> | <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>
+    </div>
+
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+ul, li{
+    list-style-type: none;
+}
+
+
+.right-tags {
+    width: 740px;
+    margin-top: 30px;
+}
+
+.tag{
+    position: relative;
+    display: inline-block;
+    width: 120px;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 0 0 15px;
+    margin: 0 8px 20px 0;
+    text-align: left;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+
+.left-tags{
+    display: inline-block;
+    margin: 3px 2px;
+}
+
+.badge{
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    padding: 2px 5px;
+    line-height: 12px;
+}
+
+.archives-left{
+    width: 200px;
+    list-style-type: none;
+    padding: 0 0 0 6px;
+}
+
+.archives-left li{
+    float: left;
+    width: 87px;
+    font-size: 14px;
+    font-family: "Times New Roman", STFangsong;
+    font-weight: normal;
+    margin: 1px 10px 3px 0;
+    word-spacing: 2px;
+}

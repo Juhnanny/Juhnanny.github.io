@@ -1,0 +1,98 @@
+.bg-image img{
+    width:740px;
+    height: 200px;
+}
+
+.categories{
+    margin-top: 20px;
+}
+
+.categories .blogs{
+    background: #ffffff;
+}
+
+.categories .nav li{
+    margin-bottom: 15px;
+}
+
+.categories .blog{
+    width: 740px;
+    height: 180px;
+    padding: 10px 20px;
+    margin: 0 0 20px 0;
+    font-family: "Times New Roman", STFangsong;
+    font-weight: 400;
+    position: relative;
+}
+
+
+.categories .blog h2{
+    font-family: "Times New Roman", STKaiti;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.categories .blog .each-blog{
+    padding: 0 20px;
+    margin-top: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+
+.categories .blog .detail{
+    position: absolute;
+    bottom: -15px;
+    right: 20px;
+}
+
+.categories .blog .detail .btn{
+    padding: 0 10px;
+    height: 26px;
+    line-height: 23px;
+    font-size: 18px;
+}
+
+.nav-tabs{
+    width: 740px;
+    height: 42px;
+    margin-left: -1px;
+}
+
+
+
+hr{
+    margin: 10px 0;
+    height: 3px;
+    border: none;
+    background-color: #ddd;
+    background-image: repeating-linear-gradient(-45deg, #fff, #fff 4px, transparent 4px, transparent 8px);
+}
+
+nav{
+    text-align: center;
+}
+
+.label{
+    display: inline-block;
+    margin: 3px 2px;
+}
+
+.archives-left{
+    width: 200px;
+    list-style-type: none;
+    padding: 0 0 0 6px;
+}
+
+.archives-left li{
+    float: left;
+    width: 87px;
+    font-size: 14px;
+    font-family: "Times New Roman", STFangsong;
+    font-weight: normal;
+    margin: 1px 10px 3px 0;
+    word-spacing: 2px;
+}

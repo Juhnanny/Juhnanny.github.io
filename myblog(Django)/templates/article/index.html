@@ -1,0 +1,92 @@
+{% extends 'article/base.html' %}
+
+{% load staticfiles %}
+
+{% block js %}
+    <script>
+
+    </script>
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block archives %}
+    <ul class="archives-left">
+        {% for list in list2 %}
+            <li>{{ list }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+
+{% block tags %}
+    {% for tag in tags%}
+        <span class="label label-primary">{{ tag.name }}</span>
+    {% endfor %}
+{% endblock %}
+
+
+{% block wrapper-right %}
+    <div class="bg-image">
+        <img src="/static/images/bg2.jpg">
+    </div>
+    {% for blog in page %}
+        <div class="blogs">
+            <div class="blog">
+                <div class="category">{{ blog.category }}</div>
+                <h2 class="title"><a href="/showDetails/{{ blog.id }}">{{ blog.title }}</a></h2>
+                <p class="content">
+                    {{ blog.content|safe }}
+                </p>
+                <div class="blog-info">
+                    <span class="data">{{ blog.created_time }}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <a class="views-icon glyphicon glyphicon-eye-open" href="/showDetails/{{ blog.id }}"></a><span class="views">&nbsp;&nbsp;{{ blog.views }}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <a class="likes-icon glyphicon glyphicon-thumbs-up" href="/add-likes/{{ blog.id }}"></a><span class="likes">&nbsp;&nbsp;{{ blog.likes }}</span>
+                </div>
+            </div>
+            <hr>
+        </div>
+    {% endfor %}
+
+
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            {% if page.has_previous %}
+                <li>
+                    <a href="/1" aria-label="Previous">
+                        <span aria-hidden="true" class="glyphicon glyphicon-step-backward"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/{{ page.previous_page_number }}" aria-label="Previous">
+                        <span aria-hidden="true" class="glyphicon glyphicon-backward"></span>
+                    </a>
+                </li>
+            {% endif %}
+
+            {% for index in page.paginator.page_range %}
+                {% if page.number == index %}
+                    <li class="active"><a>{{ index }}</a></li>
+                {% else %}
+                    <li><a href="/{{ index }}">{{ index }}</a></li>
+                {% endif %}
+            {% endfor %}
+
+            {% if page.has_next %}
+                <li>
+                    <a href="/{{ page.next_page_number }}" aria-label="Next">
+                        <span aria-hidden="true" class="glyphicon glyphicon-forward"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/{{ page.paginator.num_pages }}" aria-label="Next">
+                        <span aria-hidden="true" class="glyphicon glyphicon-step-forward"></span>
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+
+{% endblock %}

@@ -1,0 +1,88 @@
+ul li{
+    list-style-type: none;
+}
+
+.time_axis{
+    width: 740px;
+}
+
+.archives_date{
+    width: 220px;
+    float: left;
+}
+
+.pub_day{
+    margin: 20px 0 20px 70px;
+    border-right: 4px solid rgb(190,190,190);
+}
+
+.pub_date{
+    height: 22px;
+    width: 100px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    text-align: left;
+    font-family: "Times New Roman";
+    font-size: 16px;
+}
+
+.archives_title{
+    float: left;
+    width: 520px;
+}
+
+.archives_blog{
+    margin: 20px 0 20px -25px;
+}
+
+.archives_blog li{
+    height: 22px;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+
+.archives_blog li:before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #555555;
+    border-radius: 50%;
+    margin-right: 15px;
+    margin-bottom: 1.8px;
+}
+
+.archives_blog li a{
+    font-family: "Times New Roman", STSong;
+    font-size: 16px;
+    color: #222222;
+    text-decoration: none;
+}
+
+.archives_blog li a:hover{
+    color: #9d9d9d;
+}
+
+nav{
+    text-align: center;
+}
+
+.label{
+    display: inline-block;
+    margin: 3px 2px;
+}
+
+.archives-left{
+    width: 200px;
+    list-style-type: none;
+    padding: 0 0 0 6px;
+}
+
+.archives-left li{
+    float: left;
+    width: 87px;
+    font-size: 14px;
+    font-family: "Times New Roman", STFangsong;
+    font-weight: normal;
+    margin: 1px 10px 3px 0;
+}

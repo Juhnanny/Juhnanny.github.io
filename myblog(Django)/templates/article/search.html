@@ -1,0 +1,38 @@
+{% extends 'article/base.html' %}
+
+{% load staticfiles %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/search.css' %}">
+{% endblock %}
+
+{% block archives %}
+    <ul class="archives-left">
+        {% for list in list2 %}
+            <li>{{ list }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+
+{% block tags %}
+    {% for tag in tags%}
+        <span class="label label-primary">{{ tag.name }}</span>
+    {% endfor %}
+{% endblock %}
+
+{% block wrapper-right %}
+    {% if search_results|length == 0 %}
+        <p class="result_count">搜索到0条记录，耗时{{ timedelta }}秒</p>
+    {% else %}
+        <p class="result_count">共搜索到{{ search_results|length }}条记录，耗时{{ timedelta }}秒</p>
+        <ol class="search_lists">
+            {% for result in search_results %}
+                <li>
+                    <p class="search_lists_title"><a href="/showDetails/{{ result.id }}">{{ result.title }}</a></p>
+                    <p class="search_lists_content">{{ result.content|safe }}</p>
+                </li>
+            {% endfor %}
+        </ol>
+    {% endif %}
+{% endblock %}

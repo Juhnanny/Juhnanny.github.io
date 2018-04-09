@@ -1,0 +1,125 @@
+.blog{
+    width: 740px;
+    padding-left: 40px;
+}
+
+.blog .blog-title{
+    padding: 20px 0 10px 0;
+    font-family: "Times New Roman", STKaiti;
+    text-align: center;
+}
+
+.blog .blog-content{
+    font-family: "Times New Roman", STKaiti;
+    padding: 10px 0;
+    font-size: 18px;
+}
+
+
+.label{
+    display: inline-block;
+    margin: 3px 2px;
+}
+
+.archives-left{
+    width: 200px;
+    list-style-type: none;
+    padding: 0 0 0 6px;
+}
+
+.archives-left li{
+    float: left;
+    width: 87px;
+    font-size: 14px;
+    font-family: "Times New Roman", STFangsong;
+    font-weight: normal;
+    margin: 1px 10px 3px 0;
+    word-spacing: 2px;
+}
+
+
+.comment_form{
+    width: 740px;
+    padding-left: 40px;
+    margin-top: 60px;
+}
+
+.comment_form textarea{
+    width: 700px;
+}
+.comment_form button{
+    float: right;
+    margin-top: 10px;
+}
+
+.comment_details{
+    width: 740px;
+    margin-top: 80px;
+    padding-left: 45px;
+}
+
+.comment_details .comment_num{
+    padding: 0 10px 0 0;
+    font-family: STFangsong;
+    font-size: 16px;
+    text-align: right;
+}
+
+.comment_details .comment_num span{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.comment_details .each-comment{
+    font-size: 14px;
+    font-family: SansSerif;
+    min-height: 35px;
+}
+
+.comment_type{
+    height: 60px;
+}
+
+.comment_type_left{
+    width: 70px;
+    height: 30px;
+    padding-top: 2px;
+    border: 1px solid rgb(55,123,181);
+    border-bottom: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    float: left;
+    font-family: STSong;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+
+}
+.comment_type_right{
+    width: 625px;
+    height: 30px;
+    float: left;
+    border-bottom: 1px solid rgb(55,123,181);
+}
+
+.comment_list .user_info{
+    height: 20px;
+}
+
+.comment_list .user_info .cmt-create-time{
+    float: right;
+    padding-right: 15px;
+    font-size: 12px;
+    color: #888888;
+}
+
+hr{
+    height: 1px;
+    border: none;
+    background-color: #cccccc;
+}
+
+nav{
+    text-align: center;
+    padding-bottom: 100px;
+}

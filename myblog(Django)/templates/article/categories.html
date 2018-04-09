@@ -1,0 +1,90 @@
+{% extends 'article/base.html' %}
+
+{% load staticfiles %}
+
+{% block js %}
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/categories.css' %}">
+{% endblock %}
+
+{% block archives %}
+    <ul class="archives-left">
+        {% for list in list2 %}
+            <li>{{ list }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block tags %}
+    {% for tag in tags%}
+        <span class="label label-primary">{{ tag.name }}</span>
+    {% endfor %}
+{% endblock %}
+
+
+{% block wrapper-right %}
+    <div class="bg-image">
+        <img src="/static/images/bg.jpg">
+    </div>
+    <div class="categories">
+        <ul class="nav nav-tabs">
+            {% for category in categories %}
+                <li role="presentation" {% if category.id == activeIndex %}class="active" {% endif %}><a href="/categories/{{ category.id}}">{{ category.name }}</a></li>
+            {% endfor %}
+        </ul>
+        <div class="blogs">
+            {% for blog in page %}
+                <div class="blog">
+                    <h2>{{ blog.title }}</h2>
+                    <p class="each-blog">{{ blog.content|safe }}</p>
+                    <p class="detail"><a class="btn btn-primary btn-lg" href="/showDetails/{{ blog.id }}" role="button">more</a></p>
+                </div>
+                <hr>
+            {% endfor %}
+        </div>
+    </div>
+
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            {% if page.has_previous %}
+                <li>
+                    <a href="/categories/{{ index }}/1" aria-label="Previous">
+                        <span aria-hidden="true" class="glyphicon glyphicon-step-backward"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/categories/{{ index }}/{{ page.previous_page_number }}" aria-label="Previous">
+                        <span aria-hidden="true" class="glyphicon glyphicon-backward"></span>
+                    </a>
+                </li>
+            {% endif %}
+
+
+            {% for pindex in page.paginator.page_range %}
+                {% if page.number == pindex %}
+                    <li class="active"><a>{{ pindex }}</a></li>
+                {% else %}
+                    <li><a href="/categories/{{ index }}/{{ pindex }}">{{ pindex }}</a></li>
+                {% endif %}
+            {% endfor %}
+
+
+            {% if page.has_next %}
+            <li>
+                <a href="/categories/{{ index }}/{{ page.next_page_number }}" aria-label="Next">
+                    <span aria-hidden="true" class="glyphicon glyphicon-forward"></span>
+                </a>
+            </li>
+            <li>
+                <a href="/categories/{{ index }}/{{ page.paginator.num_pages }}" aria-label="Next">
+                    <span aria-hidden="true" class="glyphicon glyphicon-step-forward"></span>
+                </a>
+            </li>
+
+            {% endif %}
+        </ul>
+    </nav>
+
+{% endblock %}

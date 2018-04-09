@@ -1,0 +1,136 @@
+body{
+    background: url("../images/background.jpg");
+}
+
+.container{
+    width: 80%;
+    min-height: 2100px;
+    position: relative;
+    padding: 0;
+}
+
+.footer{
+    width: 250px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    text-align: center;
+    margin-left: -125px;
+    font-family: STKaiti;
+    color: #000000;
+}
+
+.footer a{
+    text-decoration: none;
+    color: #000000;
+}
+.footer a:hover{
+    color: #9d9d9d;
+}
+
+
+.wrapper-left{
+    float: left;
+    width: 240px;
+    height: 100%;
+    margin-right: 30px;
+    background: #ffffff;
+}
+
+.intro{
+    background: rgb(43,97,142);
+    width: 240px;
+    height: 120px;
+    margin-bottom: 30px;
+}
+
+.intro p{
+    color: #ffffff;
+    height: 60px;
+    line-height: 60px;
+    margin: 0;
+    text-align: center;
+}
+.intro .chinese{
+    font-size: 30px;
+    font-family: STKaiti;
+    padding-top: 10px;
+}
+.intro .english{
+    font-size: 14px;
+    font-family: "Times New Roman";
+    padding-bottom: 10px;
+}
+
+.nav .nav-list{
+    list-style-type: none;
+    width: 220px;
+    margin-bottom: 40px;
+    padding-left: 30px;
+}
+
+.nav .nav-list li{
+    width: 220px;
+    height: 50px;
+    line-height: 50px;
+}
+
+.nav .nav-list li a{
+    text-decoration: none;
+    color: #222222;
+    font-family: "Times New Roman";
+    font-size: 17px;
+}
+
+
+.nav .nav-list li a span{
+    display:table-cell;
+    height: 40px;
+    vertical-align:middle;
+}
+
+.author-info{
+    width: 220px;
+    text-align: center;
+}
+
+
+.wrapper-right{
+    float: left;
+}
+
+
+.search{
+    width: 240px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 60px;
+}
+
+.input-group .form-control{
+    width: 160px;
+}
+
+
+.archives{
+    padding: 0 20px;
+    height: 300px;
+}
+.archives h4{
+    font-weight: bold;
+    font-family: "Times New Roman";
+    padding-bottom: 8px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.tags{
+    padding: 0 20px;
+    height: 300px;
+}
+.tags h4{
+    font-weight: bold;
+    font-family: "Times New Roman";
+    padding-bottom: 8px;
+    border-bottom: 1px solid #dddddd;
+}
+
